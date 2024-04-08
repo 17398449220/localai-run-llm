@@ -1,0 +1,31 @@
+name: "lunademo"
+
+description: |
+  This is a model used for the lunademo on the localai how tos - DO NOT USE THIS YAML, IT IS FOR THE GALLERY API ONLY, PLEASE USE THE HOW TO, TO SETUP THE MODEL! THANK YOU!
+
+license: "https://ai.meta.com/llama/license/"
+urls:
+- https://localai.io/howtos
+
+config_file: |
+  backend: llama
+  context_size: 4096
+  threads: 10
+  name: lunademo
+  parameters:
+    model: luna-ai-llama2-uncensored.Q4_K_M.gguf
+    temperature: 0.2
+  template:
+    chat: luna-chat-message
+
+prompt_templates:
+- name: "luna-chat-message"
+  content: |
+    {{.Input}}
+
+    ASSISTANT:
+    
+files:
+- filename: "luna-ai-llama2-uncensored.Q4_K_M.gguf"
+  sha256: "6a9dc401c84f0d48996eaa405174999c3a33bf12c2bfd8ea4a1e98f376de1f15"
+  uri: "https://hf-mirror.com/TheBloke/Luna-AI-Llama2-Uncensored-GGUF/resolve/main/luna-ai-llama2-uncensored.Q4_K_M.gguf"
