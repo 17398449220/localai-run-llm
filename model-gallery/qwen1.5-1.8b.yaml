@@ -1,0 +1,44 @@
+# https://github.com/mudler/LocalAI/issues/1110
+# Model name.
+# The model name is used to identify the model in the API calls.
+
+name: "qwen-1.5-1.8b"
+
+description: |
+  qwen-1.5-1.8b
+
+license: "Apache 2.0"
+urls:
+- https://github.com/QwenLM/Qwen1.5
+- https://modelscope.cn/models/qwen/Qwen1.5-1.8B-Chat-GGUF/summary
+
+config_file: |
+    backend: llama
+    parameters:
+      model: qwen1_5-1_8b-chat-q4_0.gguf
+      top_k: 80
+      temperature: 0.2
+      top_p: 0.7
+    context_size: 1024
+    template:
+      completion: qwen-1.5-completion
+      chat: qwen-1.5-chat
+      chat-message: qwen-1.5-chat-message
+files:
+    - filename: "qwen1_5-1_8b-chat-q4_0.gguf"
+      sha256: "e73b550fd9cf70af64f1d6dde4a3684818fef8bde94d878d009f7a342f533a05"
+      uri: "https://modelscope.cn/api/v1/models/qwen/Qwen1.5-1.8B-Chat-GGUF/repo?Revision=master&FilePath=qwen1_5-1_8b-chat-q4_0.gguf"
+
+prompt_templates:
+- name: "qwen-1.5-completion"
+  content: |
+      {{.Input}}
+- name: "qwen-1.5-chat"
+  content: |
+        {{.Input}}
+        <|im_start|>assistant
+- name: "qwen-1.5-chat-message"
+  content: |
+    <|im_start|>{{if eq .RoleName "assistant"}}assistant{{else if eq .RoleName "system"}}system{{else if eq .RoleName "user"}}user{{end}}
+    {{if .Content}}{{.Content}}{{end}}
+    <|im_end|>
