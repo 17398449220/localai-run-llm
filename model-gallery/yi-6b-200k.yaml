@@ -18,6 +18,7 @@ config_file: |
     template:
       completion: yi-6b-200k-completion
       chat: yi-6b-200k-chat
+      chat-message: yi-6b-200k-chat-message
 files:
     - filename: "yi-6b-200k.Q4_0.gguf"
       sha256: "6208f698fb7b7091d0a68ba9627820951a283a74fdd1cb6cfe61700768cb03c8"
@@ -26,9 +27,13 @@ files:
 prompt_templates:
 - name: "yi-6b-200k-completion"
   content: |
-      USER: Complete the following text: {{.Input}}
-      ASSISTANT: 
+      {{.Input}}
 - name: "yi-6b-200k-chat"
   content: |
-    USER: {{.Input}}
-    ASSISTANT:
+        {{.Input}}
+        <|startoftext|>assistant
+- name: "yi-6b-200k-chat-message"
+  content: |
+    <|startoftext|>{{if eq .RoleName "assistant"}}assistant{{else if eq .RoleName "system"}}system{{else if eq .RoleName "user"}}user{{end}}
+    {{if .Content}}{{.Content}}{{end}}
+    <|endoftext|>
