@@ -1,0 +1,34 @@
+name: "chatglm3-6b"
+
+description: |
+  chatglm3-6b  
+
+license: "Apache 2.0"
+urls:
+- https://modelscope.cn/models/Xorbits/chatglm3-ggml/summary
+
+config_file: |
+    backend: llama
+    parameters:
+      model: chatglm3-ggml-q4_0.bin
+      top_k: 80
+      temperature: 0.2
+      top_p: 1
+    context_size: 1024
+    template:
+      completion: chatglm3-completion
+      chat: chatglm3-chat
+files:
+    - filename: "chatglm3-ggml-q4_0.bin"
+      sha256: "063592a0113e5f15d80303a21ce2aa3c7fd13b1b000fb91890cda4d2dc2467bc"
+      uri: "https://modelscope.cn/api/v1/models/Xorbits/chatglm3-ggml/repo?Revision=master&FilePath=chatglm3-ggml-q4_0.bin"
+
+prompt_templates:
+- name: "chatglm3-completion"
+  content: |
+      USER: Complete the following text: {{.Input}}
+      ASSISTANT: 
+- name: "chatglm3-chat"
+  content: |
+    USER: {{.Input}}
+    ASSISTANT:
