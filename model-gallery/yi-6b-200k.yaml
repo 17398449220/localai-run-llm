@@ -1,0 +1,34 @@
+name: "yi-6b-200k-6b"
+
+description: |
+  yi-6b-200k-6b  
+
+license: "Apache 2.0"
+urls:
+- https://hf-mirror.com/TheBloke/Yi-6B-200K-GGUF
+
+config_file: |
+    backend: llama
+    parameters:
+      model: yi-6b-200k.Q4_0.gguf
+      top_k: 80
+      temperature: 0.2
+      top_p: 1
+    context_size: 1024
+    template:
+      completion: yi-6b-200k-completion
+      chat: yi-6b-200k-chat
+files:
+    - filename: "yi-6b-200k.Q4_0.gguf"
+      sha256: "6208f698fb7b7091d0a68ba9627820951a283a74fdd1cb6cfe61700768cb03c8"
+      uri: "https://hf-mirror.com/TheBloke/Yi-6B-200K-GGUF/resolve/main/yi-6b-200k.Q4_0.gguf"
+
+prompt_templates:
+- name: "yi-6b-200k-completion"
+  content: |
+      USER: Complete the following text: {{.Input}}
+      ASSISTANT: 
+- name: "yi-6b-200k-chat"
+  content: |
+    USER: {{.Input}}
+    ASSISTANT:

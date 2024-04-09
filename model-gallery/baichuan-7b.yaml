@@ -6,7 +6,7 @@ description: |
 license: "Apache 2.0"
 urls:
 - https://github.com/baichuan-inc/Baichuan-7B
-- 
+- https://hf-mirror.com/TheBloke/baichuan-vicuna-7B-GGML
 
 config_file: |
     backend: llama

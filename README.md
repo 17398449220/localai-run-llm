@@ -56,3 +56,59 @@ curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
     "temperature": 0.7
 }'
 ```
+
+
+## 3，大模型 chatglm3-6b
+
+
+
+```
+curl http://localhost:8080/models/apply -H "Content-Type: application/json" -d '{
+   "url": "https://gitee.com/fly-llm/localai-run-llm/raw/master/model-gallery/chatglm3-6b.yaml",
+   "name": "chatglm3-6b"
+ }'
+```
+
+测试接口
+```
+curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
+-H 'Content-Type: application/json' -d '{
+    "model": "chatglm3-6b",
+    "messages": [
+        {
+            "role": "user",
+            "content": "北京景点?"
+        }
+    ],
+    "max_tokens": 512,
+    "temperature": 0.7
+}'
+```
+
+
+## 3，大模型 Yi-6B-200K
+
+
+
+```
+curl http://localhost:8080/models/apply -H "Content-Type: application/json" -d '{
+   "url": "https://gitee.com/fly-llm/localai-run-llm/raw/master/model-gallery/yi-6b-200k.yaml",
+   "name": "yi-6b-200k"
+ }'
+```
+
+测试接口
+```
+curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
+-H 'Content-Type: application/json' -d '{
+    "model": "yi-6b-200k",
+    "messages": [
+        {
+            "role": "user",
+            "content": "北京景点?"
+        }
+    ],
+    "max_tokens": 512,
+    "temperature": 0.7
+}'
+```
