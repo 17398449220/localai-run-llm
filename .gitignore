@@ -1,3 +1,7 @@
+#
+local-ai-*
+models
+
 .buildpath
 .hgignore.swp
 .project

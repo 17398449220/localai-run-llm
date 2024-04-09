@@ -17,7 +17,7 @@ config_file: |
     parameters:
       model: qwen1_5-1_8b-chat-q4_0.gguf
       top_k: 80
-      temperature: 0.2
+      temperature: 1
       top_p: 0.7
     context_size: 1024
     template:
