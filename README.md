@@ -64,6 +64,34 @@ curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
 }'
 ```
 
+## 大模型 qwen1.5-1.8b-chat，速度快
+
+参考地址：
+https://github.com/mudler/LocalAI/issues/1110
+
+
+```bash
+curl http://localhost:8080/models/apply -H "Content-Type: application/json" -d '{
+   "url": "https://gitee.com/fly-llm/localai-run-llm/raw/master/model-gallery/qwen1.5-1.8b.yaml",
+   "name": "qwen1.5-1.8b-chat"
+ }'
+```
+
+测试接口
+
+```bash
+curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
+-H 'Content-Type: application/json' -d '{
+    "model": "qwen1.5-1.8b-chat","stream":true,
+    "messages": [
+        {
+            "role": "user",
+            "content": "北京景点"
+        }
+    ]
+}'
+```
+
 
 ## 大模型 qwen1.5-14b-chat，速度快
 

@@ -15,7 +15,7 @@ urls:
 config_file: |
     backend: llama
     parameters:
-      model: qwen1_5-0_5b-chat-q4_0.gguf
+      model: qwen1_5-0_5b-chat-q4_k_m.gguf
       top_k: 80
       temperature: 1
       top_p: 0.7
@@ -25,9 +25,9 @@ config_file: |
       chat: qwen-1.5-chat
       chat-message: qwen-1.5-chat-message
 files:
-    - filename: "qwen1_5-0_5b-chat-q4_0.gguf"
-      sha256: "46a9de8316739892e2721fdc49f8353155e4c1bcfa0b17867cb590d2dfdf1d99"
-      uri: "https://modelscope.cn/api/v1/models/qwen/Qwen1.5-0.5B-Chat-GGUF/repo?Revision=master&FilePath=qwen1_5-0_5b-chat-q4_0.gguf"
+    - filename: "qwen1_5-0_5b-chat-q4_k_m.gguf"
+      sha256: "92916b71d32f5afea48fb7383e3b48c5b1c111f5a59f0b83c764ea1d07fe1a3a"
+      uri: "https://www.modelscope.cn/api/v1/models/qwen/Qwen1.5-0.5B-Chat-GGUF/repo?Revision=master&FilePath=qwen1_5-0_5b-chat-q4_k_m.gguf"
 
 prompt_templates:
 - name: "qwen-1.5-completion"
