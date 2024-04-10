@@ -73,8 +73,8 @@ https://github.com/mudler/LocalAI/issues/1110
 
 ```bash
 curl http://localhost:8080/models/apply -H "Content-Type: application/json" -d '{
-   "url": "https://gitee.com/fly-llm/localai-run-llm/raw/master/model-gallery/qwen1.5-14b.yaml",
-   "name": "qwen1.5-14b-chat"
+   "url": "https://gitee.com/fly-llm/localai-run-llm/raw/master/model-gallery/qwen1.5-7b.yaml",
+   "name": "qwen1.5-7b-chat"
  }'
 ```
 
@@ -83,15 +83,13 @@ curl http://localhost:8080/models/apply -H "Content-Type: application/json" -d '
 ```bash
 curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
 -H 'Content-Type: application/json' -d '{
-    "model": "qwen1.5-14b-chat","stream":true,
+    "model": "qwen1.5-7b-chat","stream":true,
     "messages": [
         {
             "role": "user",
-            "content": "北京景点?"
+            "content": "北京景点"
         }
-    ],
-    "max_tokens": 512,
-    "temperature": 0.7
+    ]
 }'
 ```
 
