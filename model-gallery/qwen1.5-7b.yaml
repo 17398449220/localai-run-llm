@@ -20,6 +20,7 @@ config_file: |
       temperature: 1
       top_p: 0.7
     context_size: 1024
+    cuda: true
     mmap: true
     gpu_layers: 90 # Comment out to disable offloading to GPU
     threads: 10
