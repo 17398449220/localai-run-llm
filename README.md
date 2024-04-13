@@ -4,9 +4,11 @@
 https://github.com/mudler/LocalAI/releases
 
 ```bash
-wget https://github.com/mudler/LocalAI/releases/download/v2.11.0/local-ai-cuda12-Linux-x86_64
+cuda11
+wget https://github.com/mudler/LocalAI/releases/download/v2.12.3/local-ai-cuda11-Linux-x86_64
 
-wget https://github.com/mudler/LocalAI/releases/download/v2.11.0/local-ai-avx2-Linux-x86_64
+cpu
+https://github.com/mudler/LocalAI/releases/download/v2.12.3/local-ai-avx2-Linux-x86_64
 ```
 
 替换地址：https://huggingface.co 成：https://hf-mirror.com/
@@ -93,7 +95,7 @@ curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
 ```
 
 
-## 大模型 qwen1.5-14b-chat，速度快
+## 大模型 qwen1.5-7b-chat，速度快
 
 参考地址：
 https://github.com/mudler/LocalAI/issues/1110
@@ -121,9 +123,70 @@ curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
 }'
 ```
 
+## 大模型 qwen1.5-14b-chat，速度快
 
-## 3，大模型 chatglm3-6b
+参考地址：
+https://github.com/mudler/LocalAI/issues/1110
 
+
+```bash
+
+axel -a  "https://www.modelscope.cn/api/v1/models/qwen/Qwen1.5-14B-Chat-GGUF/repo?Revision=master&FilePath=qwen1_5-14b-chat-q4_0.gguf"
+
+
+curl http://localhost:8080/models/apply -H "Content-Type: application/json" -d '{
+   "url": "https://gitee.com/fly-llm/localai-run-llm/raw/master/model-gallery/qwen1.5-14b.yaml",
+   "name": "qwen1.5-14b-chat"
+ }'
+```
+
+测试接口
+
+```bash
+curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
+-H 'Content-Type: application/json' -d '{
+    "model": "qwen1.5-14b-chat","stream":true,
+    "messages": [
+        {
+            "role": "user",
+            "content": "北京景点"
+        }
+    ]
+}'
+```
+
+
+## 大模型 qwen1.5-32b-chat，速度快
+ 
+
+```bash
+
+curl http://localhost:8080/models/apply -H "Content-Type: application/json" -d '{
+   "url": "https://gitee.com/fly-llm/localai-run-llm/raw/master/model-gallery/qwen1.5-32b.yaml",
+   "name": "qwen1.5-32b-chat"
+ }'
+```
+
+测试接口
+
+```bash
+curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
+-H 'Content-Type: application/json' -d '{
+    "model": "qwen1.5-32b-chat","stream":true,
+    "messages": [
+        {
+            "role": "user",
+            "content": "北京景点"
+        }
+    ]
+}'
+```
+
+
+wget "https://modelscope.cn/api/v1/models/qwen/Qwen1.5-32B-Chat-GGUF/repo?Revision=master&FilePath=qwen1_5-32b-chat-q4_0.gguf"
+
+
+## 3，大模型 chatglm3-6b，不能执行
 
 
 ```bash
