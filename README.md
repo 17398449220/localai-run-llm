@@ -185,8 +185,18 @@ curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
 }'
 ```
 
+## 使用docker 启动本地镜像
+
+```bash
+# 开启日志：
+docker run -p 8080:8080 -e DEBUG=true --name local-ai -it \
+-v `pwd`/aio:/aio -v `pwd`/models:/build/models localai/localai:latest-aio-cpu
+
+```
+
 ## 生成图片，使用 stablediffusion-cpp 
 
+需要使用镜像：
 
 ```bash
 
