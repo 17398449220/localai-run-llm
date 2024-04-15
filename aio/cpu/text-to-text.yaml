@@ -1,7 +1,7 @@
 name: gpt-4
 mmap: true
 parameters:
-  model: https://hf-mirror.com/NousResearch/Hermes-2-Pro-Mistral-7B-GGUF/Hermes-2-Pro-Mistral-7B.Q2_K.gguf
+  model: https://hf-mirror.com/NousResearch/Hermes-2-Pro-Mistral-7B-GGUF/resolve/main/Hermes-2-Pro-Mistral-7B.Q2_K.gguf
 
 template:
   chat_message: |

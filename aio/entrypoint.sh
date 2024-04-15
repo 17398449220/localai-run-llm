@@ -129,7 +129,11 @@ detect_gpu
 detect_gpu_size
 
 PROFILE="${PROFILE:-$GPU_SIZE}" # default to cpu
+echo "PROFILE : ${PROFILE}"
+
 export MODELS="${MODELS:-/aio/${PROFILE}/embeddings.yaml,/aio/${PROFILE}/text-to-speech.yaml,/aio/${PROFILE}/image-gen.yaml,/aio/${PROFILE}/text-to-text.yaml,/aio/${PROFILE}/speech-to-text.yaml,/aio/${PROFILE}/vision.yaml}"
+
+echo "MODELS : ${MODELS}"
 
 check_vars
 

@@ -1,7 +1,7 @@
 name: text-embedding-ada-002
 backend: bert-embeddings
 parameters:
-  model: https://hf-mirror.com/mudler/all-MiniLM-L6-v2/ggml-model-q4_0.bin
+  model: https://hf-mirror.com/mudler/all-MiniLM-L6-v2/resolve/main/ggml-model-q4_0.bin
 
 usage: |
     You can test this model with curl like this:
