@@ -161,6 +161,9 @@ curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
 
 ```bash
 
+wget "https://modelscope.cn/api/v1/models/qwen/Qwen1.5-32B-Chat-GGUF/repo?Revision=master&FilePath=qwen1_5-32b-chat-q4_0.gguf"
+
+
 curl http://localhost:8080/models/apply -H "Content-Type: application/json" -d '{
    "url": "https://gitee.com/fly-llm/localai-run-llm/raw/master/model-gallery/qwen1.5-32b.yaml",
    "name": "qwen1.5-32b-chat"
@@ -182,8 +185,28 @@ curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
 }'
 ```
 
+## 生成图片，使用 stablediffusion-cpp 
 
-wget "https://modelscope.cn/api/v1/models/qwen/Qwen1.5-32B-Chat-GGUF/repo?Revision=master&FilePath=qwen1_5-32b-chat-q4_0.gguf"
+
+```bash
+
+
+curl http://localhost:8080/models/apply -H "Content-Type: application/json" -d '{
+   "url": "https://gitee.com/fly-llm/localai-run-llm/raw/master/model-gallery/stablediffusion.yaml",
+   "name": "stablediffusion"
+ }'
+```
+
+测试接口
+
+```bash
+curl http://localhost:8080/v1/images/generations -H "Content-Type: application/json" -d '{
+  "prompt": "floating hair, portrait, ((loli)), ((one girl)), cute face, hidden hands, asymmetrical bangs, beautiful detailed eyes, eye shadow, hair ornament, ribbons, bowties, buttons, pleated skirt, (((masterpiece))), ((best quality)), colorful|((part of the head)), ((((mutated hands and fingers)))), deformed, blurry, bad anatomy, disfigured, poorly drawn face, mutation, mutated, extra limb, ugly, poorly drawn hands, missing limb, blurry, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, Octane renderer, lowres, bad anatomy, bad hands, text",
+  "size": "256x256"
+}'
+
+```
+
 
 
 ## 3，大模型 chatglm3-6b，不能执行
