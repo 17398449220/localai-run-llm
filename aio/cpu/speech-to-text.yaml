@@ -4,13 +4,10 @@ parameters:
   model: ggml-whisper-base.bin
 
 usage: |
-    ## example audio file
-    wget --quiet --show-progress -O gb1.ogg https://upload.wikimedia.org/wikipedia/commons/1/1f/George_W_Bush_Columbia_FINAL.ogg
-
     ## Send the example audio file to the transcriptions endpoint
     curl http://localhost:8080/v1/audio/transcriptions \
-         -H "Content-Type: multipart/form-data" \
-         -F file="@$PWD/gb1.ogg" -F model="whisper-1"
+    -H "Content-Type: multipart/form-data" -F file="@$PWD/voice-test.mp3" \
+    -F model="whisper-1"
 
 download_files:
 - filename: "ggml-whisper-base.bin"
