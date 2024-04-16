@@ -62,7 +62,7 @@ curl -X 'POST' 'http://0.0.0.0:8080/v1/chat/completions' \
         }
     ],
     "max_tokens": 512,
-    "temperature": 0.7
+    "temperature": 1
 }'
 ```
 

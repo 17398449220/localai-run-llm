@@ -19,11 +19,11 @@ template:
     {{.Input}}
     ASSISTANT:
 
-download_files:
-- filename: bakllava.gguf
-  uri: https://hf-mirror.com/mys/ggml_bakllava-1/resolve/main/ggml-model-q4_k.gguf
-- filename: bakllava-mmproj.gguf
-  uri: https://hf-mirror.com/mys/ggml_bakllava-1/resolve/main/mmproj-model-f16.gguf
+# download_files:
+# - filename: bakllava.gguf
+#   uri: https://hf-mirror.com/mys/ggml_bakllava-1/resolve/main/ggml-model-q4_k.gguf
+# - filename: bakllava-mmproj.gguf
+#   uri: https://hf-mirror.com/mys/ggml_bakllava-1/resolve/main/mmproj-model-f16.gguf
 
 usage: |
     curl http://localhost:8080/v1/chat/completions -H "Content-Type: application/json" -d '{

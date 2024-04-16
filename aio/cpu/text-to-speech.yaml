@@ -1,7 +1,4 @@
 name: tts-1
-download_files:
-  - filename: voice-en-us-amy-low.tar.gz
-    uri: https://mirror.ghproxy.com/https://github.com/rhasspy/piper/releases/download/v0.0.2/voice-en-us-amy-low.tar.gz
 
 parameters:
   model: en-us-amy-low.onnx
@@ -13,3 +10,7 @@ usage: |
       "model":"voice-en-us-amy-low",
       "input": "Hi, this is a test."
     }'
+
+download_files:
+  - filename: voice-en-us-amy-low.tar.gz
+    uri: https://mirror.ghproxy.com/https://github.com/rhasspy/piper/releases/download/v0.0.2/voice-en-us-amy-low.tar.gz
