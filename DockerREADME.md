@@ -7,6 +7,9 @@ Please keep using only C++ backends so the base image is as small as possible (w
 ## 使用docker 启动本地镜像
 
 ```bash
+
+git clone https://gitee.com/fly-llm/localai-run-llm.git
+
 # 开启日志：
 docker run -p 8080:8080 -e DEBUG=true --name local-ai -it \
 -v `pwd`/aio:/aio -v `pwd`/models:/build/models localai/localai:latest-aio-cpu
