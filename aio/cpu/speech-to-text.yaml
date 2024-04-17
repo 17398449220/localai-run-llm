@@ -1,3 +1,5 @@
+# 使用模型地址 ：
+# https://hf-mirror.com/ggerganov/whisper.cpp
 name: whisper-1
 backend: whisper
 parameters:

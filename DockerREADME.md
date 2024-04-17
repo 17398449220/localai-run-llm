@@ -14,6 +14,11 @@ git clone https://gitee.com/fly-llm/localai-run-llm.git
 docker run -p 8080:8080 -e DEBUG=true --name local-ai -it \
 -v `pwd`/aio:/aio -v `pwd`/models:/build/models localai/localai:latest-aio-cpu
 
+
+
+docker run -p 8080:8080 -e DEBUG=true -e MODELS=/aio/cpu/embeddings.yaml --name local-ai -it \
+-v `pwd`/aio:/aio -v `pwd`/models:/build/models localai/localai:latest-aio-cpu
+
 ```
 
 测试接口
