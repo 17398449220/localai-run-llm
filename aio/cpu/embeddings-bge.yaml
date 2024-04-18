@@ -1,0 +1,21 @@
+## 使用bge 大模型：
+## https://localai.io/features/embeddings/
+## https://www.modelscope.cn/models/flyiot/bge-base-zh-v1.5-ggml/summary
+
+name: text-embedding-ada-002
+backend: llama #bert-embeddings
+parameters:
+  model: bge-base-zh-v1.5-ggml-model-q4_0.bin
+
+usage: |
+    You can test this model with curl like this:
+
+    curl http://localhost:8080/embeddings -X POST -H "Content-Type: application/json" -d '{
+      "input": "Your text string goes here",
+      "model": "text-embedding-ada-002"
+    }'
+
+download_files:
+- filename: "bge-base-zh-v1.5-ggml-model-q4_0.bin"
+  sha256: "da4d976e3988977ec4d9fde6653a8fe954b71a0c502c30eda6f84234556cde54"
+  uri: "https://www.modelscope.cn/api/v1/models/flyiot/bge-base-zh-v1.5-ggml/repo?Revision=master&FilePath=ggml-model-q4_0.bin"
