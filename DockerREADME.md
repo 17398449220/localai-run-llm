@@ -63,3 +63,9 @@ curl http://localhost:8080/tts -H "Content-Type: application/json" -d '{
 }'
 
 ```
+
+## 本地编译代码
+
+
+export DEBUG=true
+export MODELS=`pwd`/aio/cpu/embeddings.yaml

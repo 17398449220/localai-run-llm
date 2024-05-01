@@ -1,6 +1,8 @@
 #
 local-ai-*
 models
+bk1.backend-assets
+backend-assets
 
 .buildpath
 .hgignore.swp
