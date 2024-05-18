@@ -9,7 +9,7 @@ roles:
   assistant: "ASSISTANT:"
   system: "SYSTEM:"
 
-mmproj: bakllava-mmproj.gguf
+mmproj: bakllava.gguf
 parameters:
   model: bakllava.gguf
 
@@ -19,13 +19,16 @@ template:
     {{.Input}}
     ASSISTANT:
 
-# download_files:
-# - filename: bakllava.gguf
-#   uri: https://hf-mirror.com/mys/ggml_bakllava-1/resolve/main/ggml-model-q4_k.gguf
-# - filename: bakllava-mmproj.gguf
-#   uri: https://hf-mirror.com/mys/ggml_bakllava-1/resolve/main/mmproj-model-f16.gguf
-
 usage: |
     curl http://localhost:8080/v1/chat/completions -H "Content-Type: application/json" -d '{
         "model": "gpt-4-vision-preview",
         "messages": [{"role": "user", "content": [{"type":"text", "text": "What is in the image?"}, {"type": "image_url", "image_url": {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg" }}], "temperature": 0.9}]}'
+
+# https://hf-mirror.com/mys/ggml_bakllava-1/tree/main
+# 选择不同裁剪尺寸的：
+download_files:
+- filename: bakllava.gguf
+  sha256: "5be58c339d8762e72d482a3e071a58d2df07df4a7aaabf8869415ae2b0f088d6"
+  uri: https://hf-mirror.com/mys/ggml_bakllava-1/resolve/main/ggml-model-q4_k.gguf
+# - filename: bakllava-mmproj.gguf
+#   uri: https://hf-mirror.com/mys/ggml_bakllava-1/resolve/main/mmproj-model-f16.gguf

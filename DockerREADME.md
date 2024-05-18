@@ -10,13 +10,13 @@ Please keep using only C++ backends so the base image is as small as possible (w
 
 git clone https://gitee.com/fly-llm/localai-run-llm.git
 
-# 开启日志：
+# 开启日志，启动全部模型
 docker run -p 8080:8080 -e DEBUG=true --name local-ai -it \
 -v `pwd`/aio:/aio -v `pwd`/models:/build/models localai/localai:latest-aio-cpu
 
 
-
-docker run -p 8080:8080 -e DEBUG=true -e MODELS=/aio/cpu/embeddings.yaml --name local-ai -it \
+# 单独测试 embedding-bge
+docker run -p 8080:8080 -e DEBUG=true -e MODELS=/aio/cpu/embeddings-bge.yaml --name local-ai -it \
 -v `pwd`/aio:/aio -v `pwd`/models:/build/models localai/localai:latest-aio-cpu
 
 ```
@@ -54,13 +54,17 @@ curl http://localhost:8080/v1/images/generations -H "Content-Type: application/j
 }'
 
 
+## 语音转文字，支持中文
 curl http://localhost:8080/v1/audio/transcriptions -H "Content-Type: multipart/form-data" -F file="@$PWD/voice-test.mp3" -F model="whisper-1"
 
 
+## 文字转语音，只支持英文
 curl http://localhost:8080/tts -H "Content-Type: application/json" -d '{
-    "model":"voice-en-us-amy-low",
+    "model":"tts-1",
     "input": "Hi, this is a test."
 }'
+
+
 
 ```
 
