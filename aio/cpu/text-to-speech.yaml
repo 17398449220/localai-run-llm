@@ -1,16 +1,24 @@
 name: tts-1
 
 parameters:
-  model: en-us-amy-low.onnx
+  model: zh_CN-huayan-medium.onnx
 
 usage: |
     To test if this model works as expected, you can use the following curl command:
 
     curl http://localhost:8080/tts -H "Content-Type: application/json" -d '{
-      "model":"voice-en-us-amy-low",
+      "model":"zh_CN-huayan-medium",
       "input": "Hi, this is a test."
     }'
 
+# 老地址
+#    uri: https://mirror.ghproxy.com/https://github.com/rhasspy/piper/releases/download/v0.0.2/voice-en-us-amy-low.tar.gz
+# 新地址：https://hf-mirror.com/rhasspy/piper-voices/tree/main
+
 download_files:
-  - filename: voice-en-us-amy-low.tar.gz
-    uri: https://mirror.ghproxy.com/https://github.com/rhasspy/piper/releases/download/v0.0.2/voice-en-us-amy-low.tar.gz
+  - filename: zh_CN-huayan-medium.onnx
+    sha256: "9929917bf8cabb26fd528ea44d3a6699c11e87317a14765312420be230be0f3d"
+    uri: https://hf-mirror.com/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx?download=true
+  - filename: zh_CN-huayan-medium.onnx.json
+    uri: https://hf-mirror.com/rhasspy/piper-voices/raw/main/zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx.json
+

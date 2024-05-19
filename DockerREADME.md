@@ -61,8 +61,8 @@ curl http://localhost:8080/v1/audio/transcriptions -H "Content-Type: multipart/f
 ## 文字转语音，只支持英文
 curl http://localhost:8080/tts -H "Content-Type: application/json" -d '{
     "model":"tts-1",
-    "input": "Hi, this is a test."
-}'
+    "input": "中文测试"
+}' --output ./test.mp3
 
 
 
