@@ -1,0 +1,15 @@
+name: "jina-reranker-v2-base-multilingual"
+license: "Apache 2.0"
+urls:
+- https://huggingface.co/jinaai/jina-reranker-v2-base-multilingual
+description: |
+  https://huggingface.co/jinaai/jina-reranker-v2-base-multilingual
+config_file: |
+    backend: rerankers
+    parameters:
+      model: jina-reranker-v2-base-multilingual.bin
+files:
+- filename: "jina-reranker-v2-base-multilingual.bin"
+  sha256: "318b11c3ce6d8d34e5034d001166a857934c0811c4fc5fb4a40328477ccaaaf9"
+  uri: "http://10.68.35.27:8081/api/public/dl/WjBlcmJ-/jina-reranker-v2-base-multilingual.bin"
+
