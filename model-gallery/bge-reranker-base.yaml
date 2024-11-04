@@ -1,0 +1,15 @@
+name: "bge-reranker-base"
+license: "Apache 2.0"
+urls:
+- https://hf-mirror.com/BAAI/bge-reranker-base
+description: |
+  https://hf-mirror.com/BAAI/bge-reranker-base
+config_file: |
+    backend: rerankers
+    parameters:
+      model: BAAI/bge-reranker-base
+files:
+- filename: "pytorch_model.bin"
+  sha256: "5b475bec40425c52229bbc63f9f50e290315c29f4e52c8f8dd404a159c0469fa"
+  uri: "https://hf-mirror.com/BAAI/bge-reranker-base/resolve/main/pytorch_model.bin"
+
